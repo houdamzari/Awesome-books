@@ -7,21 +7,24 @@ const titleInput = document.querySelector('.title-input');
 const authorInput = document.querySelector('.author-input');
 const booksContainer = document.querySelector('.Books-Section');
 
-let bookList = [
-  {
-    id: 0,
-    BookTitle: 'ejjw',
-    BookAuthor: 'kknkjdnjen',
-  },
-  {
-    id: 1,
-    BookTitle: 'lkmjj',
-    BookAuthor: 'ljlk',
-  },
-];
+let localData = localStorage.getItem('bookList');
+let bookList = [];
+
+if (localData !== null) {
+  bookList = JSON.parse(localData);
+}
 
 function removeBook(bookId) {
-  bookList = bookList.filter((book) => book.id !== bookId);
+  bookList = bookList.filter((book) => book.id !== parseInt(bookId));
+}
+
+function storeBooks() {
+  localStorage.setItem('bookList', JSON.stringify(bookList));
+}
+
+function displayLocalBooks() {
+  const storedData = localStorage.getItem('bookList');
+  console.log(storedData);
 }
 
 const updateBooks = () => {
@@ -38,9 +41,11 @@ const updateBooks = () => {
   removeButtons.forEach((button) =>
     button.addEventListener('click', (e) => {
       removeBook(e.target.id);
+      console.log(e.target.id);
       updateBooks();
     })
   );
+  storeBooks();
 };
 
 updateBooks();
