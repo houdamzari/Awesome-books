@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hello World
+# Awesome books
 
 > A project using HTML and CSS.
 
@@ -9,14 +9,6 @@
 - HTML
 - CSS
 - JS
-
-## Live Demo
-
-- [@demo](https://houdamzari.github.io/Capstone-project/index.html)
-
-## Outline
-
-- [@demo](https://www.loom.com/share/e862a3c1e6244e97bf03320f2fffc5c7)
 
 ## Getting Started
 
