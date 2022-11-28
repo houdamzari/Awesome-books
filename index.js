@@ -1,5 +1,11 @@
 /* eslint-disable linebreak-style */
-let arr = [
+const form = document.querySelector('form');
+const addButton = document.querySelector('.AddButton');
+const titleInput = document.querySelector('.title-input');
+const authorInput = document.querySelector('.author-input');
+const booksContainer = document.querySelector('.Books-Section');
+
+let bookList = [
   {
     id: 0,
     BookTitle: 'ejjw',
@@ -12,44 +18,41 @@ let arr = [
   },
 ];
 
-const addButton = document.querySelector('.AddButton');
-const title = document.querySelector('.title-input');
-const author = document.querySelector('.author-input');
-const booksContainer = document.querySelector('.Books-Section');
-
-let Title = '';
-let Author = '';
-let booksSection = '';
-
-const BookFunction = () => {
-  arr.forEach((book) => {
-    booksSection += ` <div class='Book__section'>
-  <div class='Book__section-item'>${book.BookTitle}</div>
+const updateBooks = () => {
+  booksContainer.textContent = '';
+  bookList.forEach((book) => {
+    let booksSection = `<div class='Book__section'>
+  <div class='Book__section-item'>${book.BookTitle} (${book.id})</div>
   <div class='Book__section-item'>${book.BookAuthor}</div>
-  <button class='remove-button'>Remove</button>
-</div>`;
-    booksContainer.innerHTML = booksSection;
+  <button class='remove-button' id="${book.id}">Remove</button>
+  <hr></div>`;
+    booksContainer.innerHTML += booksSection;
   });
+  const removeButtons = document.querySelectorAll('.remove-button');
+  removeButtons.forEach((button) =>
+    button.addEventListener('click', (e) => {
+      removeBook(e.target.id);
+    })
+  );
 };
-arr.forEach((book) => {
-  booksSection += ` <div class='Book__section'>
-  <div class='Book__section-item'>${book.BookTitle}</div>
-  <div class='Book__section-item'>${book.BookAuthor}</div>
-  <button class='remove-button'>Remove</button>
-</div>`;
-});
+
+function removeBook(bookId) {
+  bookList = bookList.filter((book) => book.id != bookId);
+  updateBooks();
+}
+
+updateBooks();
 
 addButton.addEventListener('click', (e) => {
   e.preventDefault();
-  Title = title.value;
-  Author = author.value;
+  let Title = titleInput.value;
+  let Author = authorInput.value;
   const newBook = {
-    id: arr.length + 1,
+    id: Date.now(),
     BookTitle: Title,
     BookAuthor: Author,
   };
-  console.log(newBook);
-  arr.push(newBook);
-  BookFunction();
+  bookList.push(newBook);
+  updateBooks();
+  form.reset();
 });
-booksContainer.innerHTML = booksSection;
