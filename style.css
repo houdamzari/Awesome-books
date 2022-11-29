@@ -1,3 +1,68 @@
 body {
   padding: 0;
+  margin: 20px 50px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.Book__section {
+  display: flex;
+  justify-content: space-between;
+  gap: 300px;
+  margin-bottom: 20px;
+}
+
+.Books__Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-color: black;
+}
+
+.Book__section-item {
+  width: 200px;
+}
+
+.remove-button {
+  padding: 10px 20px;
+  background-color: aquamarine;
+  border-radius: 12px;
+}
+
+.AddButton {
+  padding: 10px 20px;
+  background-color: aquamarine;
+  border-radius: 12px;
+  align-self: flex-end;
+}
+
+.heading {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.title-input {
+  width: 300px;
+  padding: 10px 20px;
+}
+
+.author-input {
+  width: 300px;
+  padding: 10px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin: 0 auto;
 }
