@@ -30,7 +30,7 @@ class Library {
 
   removeBook(bookId) {
     this.bookList = this.bookList.filter(
-      (book) => book.id !== parseInt(bookId, 10)
+      (book) => book.id !== parseInt(bookId, 10),
     );
   }
 
@@ -48,12 +48,10 @@ class Library {
       booksContainer.innerHTML += booksSection;
     });
     const removeButtons = document.querySelectorAll('.remove-button');
-    removeButtons.forEach((button) =>
-      button.addEventListener('click', (e) => {
-        this.removeBook(e.target.id);
-        this.updateBooks();
-      })
-    );
+    removeButtons.forEach((button) => button.addEventListener('click', (e) => {
+      this.removeBook(e.target.id);
+      this.updateBooks();
+    }));
     this.storeBooks();
   }
 }
@@ -72,7 +70,6 @@ addButton.addEventListener('click', (e) => {
 });
 
 function toggleDisplaySection(id) {
-  console.log(id);
   if (id === 'list-btn') {
     librarySection.classList.remove('hide');
     formSection.classList.add('hide');
