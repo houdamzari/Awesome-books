@@ -1,18 +1,23 @@
 body {
   padding: 0;
-  margin: 20px 50px;
+  margin: 0;
 }
 
-.header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.Book__section {
+header {
   display: flex;
-  justify-content: space-between;
-  gap: 300px;
-  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  min-height: 70vh;
+}
+
+.library-section {
+  padding: 10px;
 }
 
 .Books__Section {
@@ -23,6 +28,13 @@ body {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-color: black;
+}
+
+.Book__section {
+  display: flex;
+  justify-content: space-between;
+  gap: 300px;
+  margin-bottom: 20px;
 }
 
 .Book__section-item {
@@ -42,11 +54,6 @@ body {
   align-self: flex-end;
 }
 
-.heading {
-  text-align: center;
-  padding: 40px 0;
-}
-
 .title-input {
   width: 300px;
   padding: 10px 20px;
@@ -57,6 +64,10 @@ body {
   padding: 10px 20px;
 }
 
+.form-section {
+  padding: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -65,4 +76,51 @@ form {
   gap: 10px;
   width: fit-content;
   margin: 0 auto;
+}
+
+.navlist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 20px 40px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-list-item {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 5px 30px;
+}
+
+.contact-section-heading {
+  text-align: center;
+}
+
+.date {
+  display: flex;
+  align-self: flex-end;
+  padding: 0 30px;
+}
+
+.footer {
+  text-align: center;
+  background-color: beige;
+  padding: 50px 20px;
+}
+
+.hide {
+  display: none;
 }

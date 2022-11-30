@@ -6,25 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="index.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
 
   <body>
+    <header>
+      <nav class="navlist">
+        <h1>Awesome Books</h1>
+        <ul class="nav-list">
+          <li><a href="" class="nav-list-item" id="list-btn">List</a></li>
+          <li><a href="" class="nav-list-item" id="new-btn">Add new </a></li>
+          <li><a href="" class="nav-list-item" id="contact-btn">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="date">February 16 2023, 10:56:55 pm</span>
+    </header>
+
     <main>
-      <h1 class='header'>All awesome books</h1>
-
-      <div class="Books__Section"></div>
-
-
-      <h2 class='heading'>Add a new book</h2>
-
-      <form>
-        <input type="text" placeholder="Title" name='title' class="title-input" /><br /><br />
-        <input type="text" placeholder="Author" name='author' class="author-input" /><br /><br />
-        <button type="submit" class="AddButton">Add</button>
-      </form>
+      <section class="library-section">
+        <h2>All Awesome Books</h2>
+        <div class="Books__Section"></div>
+      </section>
+      <section class="form-section hide">
+        <h2 class="heading">Add a new book</h2>
+        <form>
+          <input type="text" placeholder="Title" name="title" class="title-input" /><br /><br />
+          <input type="text" placeholder="Author" name="author" class="author-input" /><br /><br />
+          <button type="submit" class="AddButton">Add</button>
+        </form>
+      </section>
+      <section class="contact-section hide">
+        <h2 class="contact-section-heading">Contact Information</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, quia
+          ducimus suscipit voluptatibus perferendis, omnis excepturi itaque qui
+          iusto culpa dolorem. You can reach out to us !
+        </p>
+        <ul>
+          <li>Our email: mail.mail@mail.com</li>
+          <li>Our email: mail.mail@mail.com</li>
+          <li>Our phone number: 06666666666</li>
+          <li>Our address: Neverthmore 55,5644, luisiana , UB</li>
+        </ul>
+      </section>
     </main>
+    <footer class="footer">All Rights are reserved .</footer>
   </body>
 
 </html>
