@@ -1,18 +1,23 @@
 body {
   padding: 0;
-  margin: 20px 0 0 0;
+  margin: 0;
 }
 
-.header {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.Book__section {
+header {
   display: flex;
-  justify-content: space-between;
-  gap: 300px;
-  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+}
+
+section {
+  min-height: 70vh;
+}
+
+.library-section {
+  padding: 10px;
 }
 
 .Books__Section {
@@ -23,6 +28,12 @@ body {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-color: black;
+}
+.Book__section {
+  display: flex;
+  justify-content: space-between;
+  gap: 300px;
+  margin-bottom: 20px;
 }
 
 .Book__section-item {
@@ -42,11 +53,6 @@ body {
   align-self: flex-end;
 }
 
-.heading {
-  text-align: center;
-  padding: 40px 0;
-}
-
 .title-input {
   width: 300px;
   padding: 10px 20px;
@@ -55,6 +61,10 @@ body {
 .author-input {
   width: 300px;
   padding: 10px 20px;
+}
+
+.form-section {
+  padding: 10px;
 }
 
 form {
@@ -91,13 +101,14 @@ form {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 5px 30px;
 }
 
 .contact-section-heading {
   text-align: center;
 }
 
-.contact-section-date {
+.date {
   display: flex;
   align-self: flex-end;
   padding: 0 30px;
@@ -107,4 +118,8 @@ form {
   text-align: center;
   background-color: beige;
   padding: 50px 20px;
+}
+
+.hide {
+  display: none;
 }

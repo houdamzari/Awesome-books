@@ -4,6 +4,12 @@ const addButton = document.querySelector('.AddButton');
 const titleInput = document.querySelector('.title-input');
 const authorInput = document.querySelector('.author-input');
 const booksContainer = document.querySelector('.Books__Section');
+const listSectionBtn = document.querySelector('#list-btn');
+const formSectionBtn = document.querySelector('#new-btn');
+const contactSectionBtn = document.querySelector('#contact-btn');
+const librarySection = document.querySelector('.library-section');
+const formSection = document.querySelector('.form-section');
+const contactSection = document.querySelector('.contact-section');
 
 class Book {
   constructor(title, author, id) {
@@ -24,7 +30,7 @@ class Library {
 
   removeBook(bookId) {
     this.bookList = this.bookList.filter(
-      (book) => book.id !== parseInt(bookId, 10),
+      (book) => book.id !== parseInt(bookId, 10)
     );
   }
 
@@ -42,10 +48,12 @@ class Library {
       booksContainer.innerHTML += booksSection;
     });
     const removeButtons = document.querySelectorAll('.remove-button');
-    removeButtons.forEach((button) => button.addEventListener('click', (e) => {
-      this.removeBook(e.target.id);
-      this.updateBooks();
-    }));
+    removeButtons.forEach((button) =>
+      button.addEventListener('click', (e) => {
+        this.removeBook(e.target.id);
+        this.updateBooks();
+      })
+    );
     this.storeBooks();
   }
 }
@@ -61,4 +69,36 @@ addButton.addEventListener('click', (e) => {
   library.bookList.push(newBook);
   library.updateBooks();
   form.reset();
+});
+
+function toggleDisplaySection(id) {
+  console.log(id);
+  if (id === 'list-btn') {
+    librarySection.classList.remove('hide');
+    formSection.classList.add('hide');
+    contactSection.classList.add('hide');
+  } else if (id === 'new-btn') {
+    librarySection.classList.add('hide');
+    formSection.classList.remove('hide');
+    contactSection.classList.add('hide');
+  } else if (id === 'contact-btn') {
+    librarySection.classList.add('hide');
+    formSection.classList.add('hide');
+    contactSection.classList.remove('hide');
+  }
+}
+
+listSectionBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  toggleDisplaySection(e.target.id);
+});
+
+formSectionBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  toggleDisplaySection(e.target.id);
+});
+
+contactSectionBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  toggleDisplaySection(e.target.id);
 });
